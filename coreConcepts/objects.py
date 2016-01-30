@@ -18,7 +18,7 @@ __status__ = "Development"
 import ogr
 
 from utils import _init_log
-from coreconcepts import CcObject
+from coreConcepts import CcObject
 
 log = _init_log("objects")
 

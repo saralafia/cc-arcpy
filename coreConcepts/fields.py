@@ -20,35 +20,17 @@ import numpy.ma as ma
 import gdal
 from gdalconst import *
 
-from utils import _init_log
-from coreconcepts import CcField
-
-log = _init_log("fields")
-
-def getGtiffOffset( gtiff, position ):
-    """
-    Convert GeoTiff coordinates to matrix offset. Used for getValue GeoTiffField method and focal mean function.
-    @param position - the input geocoordinates in coordinate system of gtiff
-    @return - the i,j pair representing input position in the image matrix
-    """
-    transform = gtiff.GetGeoTransform()
-    #Convert geo-coords to (i,j) image space coordinates
-    ulx = transform [0]
-    uly = transform [3]
-    xQuery = position [0]
-    yQuery = position [1]
-    pixWidth = transform [1]
-    pixHeight = transform [5]
-    arrx = int((xQuery - ulx)/pixWidth)
-    arry = int((yQuery - uly)/pixHeight)
-    return arry, arrx
-
-def FieldGranularity(CcGranularity):
-    # TODO: 
-    def __init__( self, x, y ):
-        pass
+from coreConcepts import CcField
 
 class GeoTiffField(CcField):
+    def getName(name):
+        print(name)
+    pass
+
+class TestObject(CcField):
+    pass
+
+#class GeoTiffField(CcField):
     """
     Subclass of Abstract Fields (core concept 'field') in the GeoTiff format. Based on GDAL.
 
@@ -222,6 +204,9 @@ class GeoTiffField(CcField):
         pass
         # TODO: implement with 'aggregate' in GDAL
         # default strategy: mean
-        # http://gis.stackexchange.com/questions/110769/gdal-python-aggregate-raster-into-lower-resolution 
-        
-        
+        # http://gis.stackexchange.com/questions/110769/gdal-python-aggregate-raster-into-lower-resolutio
+
+
+
+
+
